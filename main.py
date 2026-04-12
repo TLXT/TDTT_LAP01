@@ -74,5 +74,4 @@ async def predict_upload(file: UploadFile = File(...)):
         return {"status": "error", "message": str(e)}
     
     if __name__ == "__main__":
-    # Bạn có thể tự do đổi port thành 9000, 8080 tùy ý
         uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
