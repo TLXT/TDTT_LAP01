@@ -65,3 +65,7 @@ Cấu trúc Request & Response mẫu (Endpoint POST /predict/upload):
 ## 7. Video Demo tính năng
 Thầy vui lòng truy cập liên kết bên dưới để xem video demo chi tiết toàn bộ quá trình khởi động server, lấy link public và kiểm thử hệ thống:
 https://youtu.be/McK0NUWJXSw?si=XKgEnTyHkaOJBEU_
+
+
+[![Video Demo Lab 1](thumbnail.jpg)](https://drive.google.com/file/d/1uz2G0IrA9GqcowYc9IVwgrFVcwihu7QH/view?usp=sharing)
+
