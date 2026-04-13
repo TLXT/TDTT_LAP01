@@ -1,5 +1,6 @@
 import os
 os.environ["HF_HOME"] = r"D:\HuggingFace_Models"
+# Hai dòng trên là để chạy model lên từ ổ D ạ, tiết kiệm dung lượng ổ C ạ
 
 from fastapi import FastAPI, File, UploadFile
 from transformers import BlipProcessor, BlipForConditionalGeneration
@@ -11,7 +12,7 @@ import uvicorn
 
 app = FastAPI()
 
-print("Đang khởi động và kiểm tra mô hình BLIP tại ổ D...")
+print("Đang khởi động và kiểm tra mô hình BLIP")
 processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
 model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
 print("Tải thành công! Server đã sẵn sàng.")
