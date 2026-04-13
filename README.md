@@ -7,7 +7,7 @@
 
 ---
 
-## 2. Thông tin Mô hình (Model)
+## 2. Thông tin Model
 * **Tên mô hình:** `BLIP` (Bootstrapping Language-Image Pre-training) - Phiên bản Base.
 * **Liên kết Hugging Face:** [Salesforce/blip-image-captioning-base](https://huggingface.co/Salesforce/blip-image-captioning-base)
 * **Lý do lựa chọn:** Đây là một mô hình được tối ưu cực kỳ tốt, dung lượng nhẹ. Nó cho phép suy luận mượt mà và ổn định trên phần cứng CPU cá nhân nhưng vẫn đảm bảo độ chính xác cao trong việc nhận diện và mô tả chi tiết hình ảnh.
@@ -15,7 +15,7 @@
 ---
 
 ## 3. Mô tả chức năng hệ thống
-Hệ thống là một Web API được xây dựng bằng framework **FastAPI**, cung cấp chức năng Nhận diện và Sinh mô tả ảnh tự động (Image Captioning) dựa trên công nghệ học sâu.
+Hệ thống là một Web API được xây dựng bằng framework **FastAPI**, cung cấp chức năng "Nhận diện" và "Sinh mô tả ảnh tự động" dựa trên deep learning.
 
 * **Đa dạng đầu vào:** Hỗ trợ 2 phương thức linh hoạt: Nhận diện qua đường dẫn liên kết mạng (`URL`) HOẶC nhận diện trực tiếp qua file ảnh tải lên từ máy tính (`Upload`).
 * **Phiên dịch tự động:** Kết quả mô tả gốc bằng tiếng Anh từ mô hình BLIP sẽ được hệ thống tự động dịch sang tiếng Việt thông qua thư viện `deep-translator` trước khi đóng gói trả về cho người dùng.
@@ -24,7 +24,7 @@ Hệ thống là một Web API được xây dựng bằng framework **FastAPI**
 
 ## 4. Hướng dẫn cài đặt môi trường
 Yêu cầu máy tính đã cài đặt sẵn Python (khuyến nghị phiên bản `3.8` trở lên).
-Mở Terminal (hoặc Command Prompt) tại thư mục chứa dự án và chạy lệnh sau để tự động cài đặt toàn bộ môi trường và các thư viện phụ thuộc:
+Mở Terminal tại thư mục chứa dự án và chạy lệnh sau để tự động cài đặt toàn bộ môi trường và các thư viện phụ thuộc:
 
 ```text
 pip install -r requirements.txt
@@ -41,7 +41,7 @@ uvicorn main:app --reload
 * Trải nghiệm giao diện tương tác trực quan (Swagger UI) tại: http://127.0.0.1:8000/docs.
 
 ## 6. Hướng dẫn gọi API & Ví dụ
-Dự án có đi kèm file test_api.py sử dụng thư viện requests để tự động hóa việc gọi API. Bạn mở một Terminal mới và chạy lệnh sau để kiểm thử:
+Dự án có đi kèm file test_api.py sử dụng thư viện requests để tự động hóa việc gọi API. Mời thầy mở một Terminal mới và chạy lệnh sau để kiểm thử sau khi đã thực hiện bước 5:
 
 ```text
 python test_api.py
@@ -50,7 +50,7 @@ Cấu trúc Request & Response mẫu (Endpoint POST /predict/upload):
 
 * Phương thức: POST
 
-* Dữ liệu gửi đi (Body): File ảnh (.jpg, .png) định dạng multipart/form-data.
+* Dữ liệu gửi đi: File ảnh (.jpg, .png) định dạng multipart/form-data.
 
 * Kết quả trả về (JSON Format):
 
